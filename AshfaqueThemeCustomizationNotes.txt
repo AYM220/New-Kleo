@@ -1,0 +1,52 @@
+Footer customization notes
+----------------------------------
+https://seventhqueen.com/support/kleo/article/add-extra-footer-columns
+----------------------------------
+The example below it will give you 6 six footer columns
+
+This function should be added to wp-content/themes/kleo-child/functions.php
+NOTE : Kleo Child theme needs to be installed and activated.
+
+----------------------------------
+steP1:
+
+
+function my_extra_footer_widget_cols () {
+
+    register_sidebar(array(
+        'name' => 'Footer sidebar 5',
+        'id' => 'footer-5',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer sidebar 6',
+        'id' => 'footer-6',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ));
+}
+
+add_action( 'widgets_init', 'my_extra_footer_widget_cols' );
+
+
+STEP2:
+
+Then upload the attached file ( footer-sidebar.php ) in wp-content/themes/kleo-child/
+
+http://seventhqueen.com/support/wp-content/uploads/2016/05/sidebar-footer.php_.zip
+
+These modifications will give you 6 footer columns
+----------------------------------
+
+
+----------------------------------
+
+----------------------------------
+
+----------------------------------
